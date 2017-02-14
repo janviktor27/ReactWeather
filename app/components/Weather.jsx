@@ -29,16 +29,18 @@ var Weather = React.createClass({
       var {location, temp, isLoading} = this.state;
       function renderMessage(){
         if(isLoading){
-          return <img src="https://www.groundwala.in/media/imgs/balls_loading.gif" />;
+          return <img  width="90px" src="https://www.groundwala.in/media/imgs/balls_loading.gif" />;
         }else if(temp && location){
           return <WeatherMessage location={location} temp={temp}/>;
         }
       }
     return(
-      <div>
-        <h3>Weather Component</h3>
-          <WeatherForm onSearch={this.handleSearch} />
-          {renderMessage()}
+      <div className="column large-6 text-center">
+        <div className="callout">
+            <h3>GET WEATHER</h3>
+            <WeatherForm onSearch={this.handleSearch} />
+            {renderMessage()}
+          </div>
       </div>
     );
   }
