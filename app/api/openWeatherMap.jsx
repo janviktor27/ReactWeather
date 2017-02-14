@@ -10,7 +10,7 @@ module.exports = {
       function (res){
         debugger;
         if(res.data.response.error){
-          throw new Error(res.data.response.error.type+res.data.response.error.description);
+          throw new Error(res.data.response.error.description);
         }else{
           return res.data.current_observation.temp_c;
         }
